@@ -1,0 +1,650 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+}
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+.ad{
+  background-color: #14287b;
+  height: 5vh;
+  display: none;
+}
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 1.2em;
+  border-radius: 50%;
+  background-color: #fef22e;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  z-index: 98;
+} 
+.scroll-to-top i{
+  color: #14287b;
+  font-size: 1.5em;
+}
+.ad_cont{
+  width: 75%;
+  height: 5vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ad_cont span{
+  color: #c6ceec;
+  font-size: 1.3em;
+  display: flex;
+  align-items: baseline;
+  gap: .5em;
+}
+.ad button{
+  display: flex;
+  align-items: center;
+  gap: .5em;
+  font-size: 1.2em;
+  padding: 0 2.5em;
+  height: 5vh;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #fef22e;
+  color: #3e3e3e;
+}
+.ad button:hover{
+  background-color: #287ff9;
+  color: white;
+}
+/* NavBar */
+#logo {
+  width: 11em;
+  cursor: pointer;
+}
+
+#open_nav_list,
+#close_nav_list {
+  font-size: 2em;
+  color: #14287b;
+  cursor: pointer;
+}
+header {
+  position: fixed;
+  width: 100%;
+  border-bottom: 2px solid #14287b;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  height: 7vh !important;
+  top: 0 !important;
+  transition: all 0.3s ease-in-out;
+}
+nav {
+  width: 90%;
+  margin: 0 auto;
+  height: 7vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav_list {
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  top: -100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #14287b;
+  transform: translate(-100%);
+}
+.nav_list_show {
+  top: 7.5vh;
+  transform: translate(0);
+  animation: show 400ms ease-in-out;
+}
+.nav_list li {
+  display: flex;
+  align-items: baseline;
+  border-top: 1px dashed #dddddd;
+  padding: 1em 0.5em;
+  gap: 0.5em;
+  color: #111111;
+  font-weight: 500;
+  width: 100%;
+  
+}
+.nav_list li span {
+  cursor: pointer;
+}
+.Leistungen_list {
+  padding-left: 2em;
+  display: none;
+}
+
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav_plus:hover .Leistungen_list {
+  display: block;
+}
+.nav_list li div {
+  display: flex;
+  gap: 0.5em;
+  align-items: baseline;
+}
+.nav_plus {
+  display: flex;
+  justify-content: space-between;
+}
+.nav_plus div {
+  display: flex;
+  flex-direction: column;
+}
+.nav_list li span:hover {
+  color: #287ff9;
+}
+.nav_list li i {
+  color: #287ff9;
+  cursor: pointer;
+}
+.pm {
+  color: #14287b;
+  padding-right: 1.5em;
+}
+.pm:hover {
+  color: #287ff9;
+}
+#minus_btn {
+  display: none;
+}
+.arrow_list {
+  width: 20px;
+}
+
+#close_nav_list {
+  display: none;
+}
+.nav_call {
+  display: none;
+  align-items: center;
+  gap: 1em;
+}
+.nav_call i {
+  font-size: 2em;
+  color: #14287b;
+}
+.nav_call h1 {
+  margin: 0;
+}
+
+@media (min-width: 750px) and (max-width: 1400px) {
+  nav {
+    width: 98% !important;
+  }
+}
+@media (min-width: 1100px) {
+  #close_nav_list,
+  #open_nav_list,
+  #minus_btn,
+  #plus_btn {
+    display: none !important;
+  }
+  .ad{
+    display: block !important;
+  }
+  header {
+    top: 5vh !important;
+    height: 15vh !important;
+    border-bottom: none !important;
+    
+  }
+  nav {
+    width: 75%;
+  }
+  #logo {
+    width: 16em;
+  }
+  .nav_call {
+    display: flex;
+  }
+  .nav_list {
+    position: initial;
+    transform: translate(0);
+    flex-direction: row;
+    border: none;
+    width: fit-content;
+  }
+  .nav_list li {
+    border: none;
+    width: fit-content;
+    font-size: 1.3em;
+  }
+  .nav_list li i {
+    display: none;
+  }
+
+  .Leistungen_list {
+    position: absolute;
+    top: 7vh;
+    width: fit-content;
+    background-color: white;
+    padding: 0;
+    font-size: 0.7em;
+    width: 250px;
+    box-shadow: 0px 18px 15px -4px rgba(0, 0, 0, 0.17);
+    animation: show 300ms ease-in-out;
+  
+  }
+  .Leistungen_list li {
+    border-top: 1px solid rgb(233, 233, 233);
+    padding-left: 1em;
+    border-width: 100%;
+    width: 89%;
+  }
+  .Leistungen_list li:first-child {
+    border-top: 2px solid #287ff9;
+  }
+  .Leistungen_list li:hover .arrows {
+    display: block !important;
+  }
+  .nav_plus:hover .Leistungen_list {
+    display: block !important;
+  }
+}
+
+/* End NavBar */
+
+.image_section1 {
+  padding-top: 7vh;
+  width: 100%;
+}
+.image_section1 img {
+  width: 100%;
+}
+@media (min-width: 890px) {
+  .image_section1 {
+    padding-top: 7vh !important;
+  }
+}
+
+/* Cards Section */
+.cards_section {
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5em;
+}
+.card {
+  text-align: center;
+}
+.card i {
+  font-size: 4em;
+  background-color: rgb(40, 127, 249);
+  color: white;
+  padding: 1.1em 1.3em;
+  border-radius: 0.1em;
+  transform: rotate(15deg);
+  transition: transform 0.4s ease-in-out;
+}
+.card i:hover {
+  background-color: white;
+  box-shadow: 0px 18px 15px -4px rgba(0, 0, 0, 0.17);
+  box-shadow: 3px;
+  color: #287ff9;
+  transform: rotate(0deg);
+}
+.card h2 {
+  color: #14287b;
+  margin-top: 2.5em;
+}
+@media (min-width: 974px) {
+  .cards_section {
+    width: 75%;
+    margin: 15vh auto 0;
+    gap: 7em;
+    flex-direction: row;
+  }
+}
+/* End Cards Section */
+
+/* Section2 */
+.section2 {
+  width: 100%;
+  padding: 10vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section2_img img {
+  width: 100%;
+}
+.section2_cont {
+  padding: 0 1.1em;
+  color: #646464;
+}
+.section2_cont h1 {
+  color: #287ff9;
+  font-weight: 500;
+}
+.section2_cont p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+.section2_cont ul {
+  font-size: 1.3em;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+.section2_cont ul li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  line-height: 1.5;
+}
+.section2_cont li i {
+  color: #14287b;
+}
+.yellow_butt {
+  margin-top: 1.5em;
+  background-color: #fef22e;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 1em 1.3em;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  border-radius: 0.2em;
+  color: #14287b;
+  border: none;
+  transition: background-color 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+.yellow_butt::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #fef22e;
+  transition: left 0.5s ease;
+}
+
+.yellow_butt:hover {
+  background-color: #14287b;
+  color: white;
+}
+.yellow_butt:hover::before {
+  left: 100%;
+}
+
+@media (min-width: 1400px) {
+  .section2 {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 75%;
+    margin: 0 auto;
+  }
+  .section2_cont {
+    width: 40%;
+    background-image: url("https://www.gebaeudereinigung-stuttgart-city.de/wp-content/themes/clenix/assets/img/figure15.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .section2_img {
+    width: 55%;
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1400px) {
+  .section2 {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95%;
+    margin: 0 auto;
+  }
+  .section2_cont {
+    width: 40%;
+  }
+  .section2_img {
+    width: 60%;
+  }
+}
+
+/* End Section2 */
+
+
+/* Section3 */
+.section3{
+    background-color: #f3f4f7;
+    text-align: center;
+    padding: 15vh 0;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section3_head h1{
+    color: #287ff9;
+    font-weight: 500;
+    margin: 0;
+}
+
+.s3_cards{
+    margin-top: 5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 2em;
+}
+.s3_card{
+    box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.1);
+    width: 80%;
+    margin: 0 auto;
+}
+.s3_card_top{
+    background-color: rgb(242, 242, 242);
+    width: 100%;
+    height: 140px;
+}
+.s3_card_descp{
+    background-color: white;
+    padding: 1em .5em;
+    
+}
+.s3_card_descp h2{
+    font-size: 1.7em;
+    color: #353535;
+}
+.s3_card_descp p{
+    color: #353535;
+    font-size: 1.3em;
+}
+@media (min-width: 1100px)  {
+    .s3_cards{
+        width: 90%;
+        margin: 15vh auto;
+        flex-direction: row ;
+    }
+    .s3_card{
+        width: 30%;
+        
+    }
+  }
+  @media  (min-width: 1400px) {
+    .s3_cards{
+        width: 75% !important;
+    }
+  }
+/* End Section3 */
+
+/* Section4 */
+.section4{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #14297bcf;
+}
+.section4 img{
+    position: absolute;
+    left: -200px;
+    z-index: -1;
+
+}
+.s4_cont{
+    text-align: center;
+}
+.s4_cont h1{
+    margin: 0;
+    font-size: 1.8em;
+    line-height: 1.4;
+    color: white;
+}
+.s4_cont .yellow_butt:hover {
+    background-color: #ffffff;
+    color: #14287b;
+  }
+  @media  (min-width: 1100px) {
+    .s4_cont h1{
+        font-size: 2.5em;
+    }
+    .s4_cont button{
+        font-size: 1.4em;
+    }
+  }
+/* End Section4 */
+
+/* Paragraphs Section */
+.paragraphs_section{
+    padding: 4vh 2em;
+}
+.paragraph h1{
+    font-size: 2.1em;
+    color: #14287b;
+    hyphens: auto;
+  overflow-wrap: break-word;
+}
+.p2{
+    font-size: 1.9em !important;
+}
+.p3{
+    font-size: 1.6em !important;
+}
+.paragraph p{
+    color: #7A7A7A;
+    font-size: 1.4em;
+    line-height: 1.5;
+}
+@media  (min-width: 1200px) {
+    .paragraphs_section{
+        width: 75%;
+        margin: 0 auto;
+    }
+  }
+/* End Paragraphs Section */
+
+/* Footer */
+footer{
+    background-color: #14287b;
+    background-image: url("https://www.gebaeudereinigung-stuttgart-city.de/wp-content/themes/clenix/assets/img/figure2.png");
+    padding: 5em 1em 2em;
+    color: white;
+    text-align: center;
+    
+}
+footer img{
+    width: 18em;
+}
+footer span{
+    font-size: 1.2em;
+    color: #c6ceec;
+}
+footer h1{
+    margin: 0;
+}
+.top_footer{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+.top_footer div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.top_footer div span{
+    display: flex;
+    gap: .8em;
+}
+.bot_footer{
+    margin-top: 5em;
+    border-top: 1px solid white;
+    padding: 1.2em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+.bot_footer span{
+    font-size: 1.3em;
+}
+.bot_footer ul{
+    display: flex;
+    gap: 1em;
+    font-size: 1.2em;
+    color: #c6ceec;
+}
+
+@media  (min-width: 1000px) {
+    .top_footer{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 85%;
+        margin: 0 auto;
+    }
+    .top_footer div{
+        width: 30%;
+    }
+    .bot_footer{
+        width: 85%;
+        margin: 8em auto 0;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+  }
+/* End Footer */
